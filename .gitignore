@@ -1,3 +1,6 @@
 .venv
 .idea
 notes_project/static
+notes_project/notes/migrations/*
+notes_project/users/migrations/*
+notes_project/db.sqlite3

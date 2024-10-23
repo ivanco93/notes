@@ -20,6 +20,13 @@ jobs:
           cd notes_project
           pip install -r requirements.txt
 
+      - name: Setup project configurartion
+        run: |
+          cd notes_project
+          python manage.py collectstatic
+          python manage.py makemigrations
+          python manage.py migrate
+
       - name: Run tests with coverage
         run: |
           cd notes_project
