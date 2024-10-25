@@ -134,6 +134,7 @@ SWAGGER_SETTINGS = {
 
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:4200",
+    "http://localhost:8190"
 ]
 
 CORS_ALLOW_METHODS = [
