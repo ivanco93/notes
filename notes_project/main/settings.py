@@ -43,10 +43,12 @@ INSTALLED_APPS = [
     'django_filters',
     'drf_yasg',
     'users',
+    'corsheaders',
     'notes',
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -108,6 +110,8 @@ AUTH_PASSWORD_VALIDATORS = [
 
 CSRF_TRUSTED_ORIGINS = [
     f'{os.environ.get("PROTOCOL", "http")}://{os.environ.get("BASE_URL", "localhost")}:{os.environ.get("PORT", "8000")}'
+    'http://127.0.0.1:8000'
+    'http://localhost:4200'#angular app - local deploy in dev mode
 ]
 
 REST_FRAMEWORK = {
@@ -128,6 +132,17 @@ SWAGGER_SETTINGS = {
     },
 }
 
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:4200",
+]
+
+CORS_ALLOW_METHODS = [
+    'GET',
+    'POST',
+    'PUT',
+    'DELETE',
+    'OPTIONS',
+]
 # Internationalization
 # https://docs.djangoproject.com/en/5.1/topics/i18n/
 
